@@ -1,7 +1,7 @@
-export default function Product(){
+export default function About(){
     return (
         <>
-            <p> รายการสินค้า </p>
+            <p> About us </p>
         </>
     )
 }
