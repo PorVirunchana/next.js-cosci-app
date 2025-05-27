@@ -1,16 +1,25 @@
-'use client' 
+'use client';
 
-export default function AppWelcome(){
+import { Button } from "@/components/ui/button";
+
+type AppWelcomeProps = {
+    headTitle: string;
+    isShow: boolean;
+}
+
+export default function AppWelcome({headTitle,isShow}: AppWelcomeProps){
     const title = 'Welcome to Cosci';
     const currentYear = <p>2025</p>
-    const isShow = true;
     const handleClick = () => {
         alert('Hello TypeScript');
     }
 
     return (
         <>
+        <h1>{headTitle}</h1>
+        <p>{process.env.NEXT_PUBLIC_APP_NAME}</p>
         <p> {title.toUpperCase()}</p>
+        <Button onClick={handleClick}>Click me!</Button>
         <button className="bg-blue-700 p-3 m-3 text-white rounded-lg" onClick={handleClick}>กดได้เลย!</button>
         {currentYear}
         {
