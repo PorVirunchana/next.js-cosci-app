@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Kanit } from "next/font/google";
 import "../globals.css";
-import Navbar01Page from "@/components/navbar-01/navbar-01";
+import Navbar02Page from "@/components/navbar-02/navbar-02";
 
 const kanit = Kanit({
   subsets: ['thai'],
@@ -14,19 +14,18 @@ export const metadata: Metadata = {
   description: "ขายสินค้าของนักศึกษา ประจำปี 2568",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${kanit.className}`}
-      >
-        <Navbar01Page></Navbar01Page>
-        {children}
-      </body>
-    </html>
-  );
+    export default function RootLayout({
+    children,
+    }: Readonly<{
+    children: React.ReactNode;
+    }>) {
+    return (
+        <html lang="en">
+        <body
+            className={`${kanit.className}`}>
+              <Navbar02Page/>
+            {children}
+        </body>
+        </html>
+    );
 }

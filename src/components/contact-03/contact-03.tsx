@@ -1,7 +1,10 @@
 import { MailIcon, MapPinIcon, MessageCircle, PhoneIcon } from "lucide-react";
 import Link from "next/link";
+type Contact03PageProps = {
+  version:string
+}
 
-const Contact03Page = () => (
+const Contact03Page = ({version}: Contact03PageProps) => (
   <div className="min-h-screen flex items-center justify-center pt-12 md:pt-16 pb-16">
     <div className="w-full max-w-screen-xl mx-auto px-6 xl:px-0">
       <b className="text-muted-foreground">Contact Us</b>
@@ -9,7 +12,7 @@ const Contact03Page = () => (
         We&apos;d love to hear from you
       </h2>
       <p className="mt-4 text-base sm:text-lg">
-        Our friendly team is always here to chat.
+        API Version: {version}
       </p>
       <div className="mt-14 md:mt-24 grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         <div className="bg-accent p-6 pb-10 rounded-lg">
