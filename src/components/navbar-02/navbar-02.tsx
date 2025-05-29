@@ -18,8 +18,10 @@ const Navbar02Page = () => {
             <NavMenu className="hidden md:block" />
           </div>
 
-          <div className="flex items-center gap-3">  <Badge className="p-2 text-sm"><ShoppingBasket /> <CountCartItem />item (s)</Badge>
-            
+          <div className="flex items-center gap-3"> 
+          <Link href = "/cart">
+            <Badge className="p-2 text-sm"><ShoppingBasket /> <CountCartItem />item (s)</Badge>
+          </Link>
             <Button asChild variant="outline" className="hidden sm:inline-flex"><Link href="/login">Sign In</Link>
             </Button>
             <Button asChild><Link href="/signup">Sign Up</Link></Button>
