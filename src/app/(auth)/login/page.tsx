@@ -94,7 +94,7 @@ const Login02Page = () => {
               )}
             />
             <Button type="submit" className="mt-4 w-full">
-              Log in with Email
+              Log in
             </Button>
           </form>
         </Form>
