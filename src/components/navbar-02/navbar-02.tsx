@@ -2,12 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
-import { ShoppingBasket, SunIcon } from "lucide-react";
+import { ShoppingBasket } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 import CountCartItem from "@/app/(front)/components/CountCartItem";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
-const Navbar02Page = () => {
+const Navbar02Page = async() => {
+  const session =await auth.api.getSession({
+    headers: await headers() //get user data
+  });
   return (
       <nav className="h-16 bg-background border-b">
         <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,12 +27,18 @@ const Navbar02Page = () => {
           <Link href = "/cart">
             <Badge className="p-2 text-sm"><ShoppingBasket /> <CountCartItem />item (s)</Badge>
           </Link>
-            <Button asChild variant="outline" className="hidden sm:inline-flex"><Link href="/login">Sign In</Link>
-            </Button>
-            <Button asChild><Link href="/signup">Sign Up</Link></Button>
-            <Button size="icon" variant="outline">
-              <SunIcon />
-            </Button>
+          {
+            session && (
+              <>
+                <div className="flex items-center">
+                  Hello, {session.user.name}
+                </div>
+                <Button variant="destructive" asChild>
+                  <Link href="/dashboard">Dashboard</Link>
+                </Button>
+              </>
+            )
+          }
 
             {/* Mobile Menu */}
             <div className="md:hidden">
