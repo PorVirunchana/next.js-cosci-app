@@ -17,8 +17,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const formSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8, "Password must be at least 8 characters long"),
+  email: z.string().email("รูปแบบอีเมลไม่ถูกต้อง"),
+  password: z.string().min(6, "รหัสผ่านต้องอย่างน้อย 6 ตัวอักษร"),
 });
 
 const Login02Page = () => {
@@ -38,7 +38,7 @@ const Login02Page = () => {
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-sm w-full flex flex-col items-center border rounded-lg p-6 shadow-sm">
         <p className="mt-4 text-xl font-bold tracking-tight">
-          Log in to Shadcn UI Blocks
+          เข้าสู่ระบบขายสินค้าออนไลน์ CoSci
         </p>
 
         <Button className="mt-8 w-full gap-3">
@@ -94,7 +94,7 @@ const Login02Page = () => {
               )}
             />
             <Button type="submit" className="mt-4 w-full">
-              Continue with Email
+              Log in with Email
             </Button>
           </form>
         </Form>
@@ -108,7 +108,7 @@ const Login02Page = () => {
           </Link>
           <p className="text-sm text-center">
             Don&apos;t have an account?
-            <Link href="#" className="ml-1 underline text-muted-foreground">
+            <Link href="/signup" className="ml-1 underline text-muted-foreground">
               Create account
             </Link>
           </p>
