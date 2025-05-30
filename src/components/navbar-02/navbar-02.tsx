@@ -30,12 +30,12 @@ const Navbar02Page = async() => {
           {
             session && (
               <>
+                <Button className="bg-purple-400 hover:bg-purple-200" asChild>
+                  <Link href="/dashboard">Dashboard</Link>
+                </Button>
                 <div className="flex items-center">
                   Hello, {session.user.name}
                 </div>
-                <Button variant="destructive" asChild>
-                  <Link href="/dashboard">Dashboard</Link>
-                </Button>
               </>
             )
           }
